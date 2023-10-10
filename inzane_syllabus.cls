@@ -85,9 +85,10 @@
 \newcommand{\course}[1]{\renewcommand{\course}{#1}}
 \newcommand{\courseTwo}[1]{\renewcommand{\courseTwo}{#1}}
 \newcommand{\courseThree}[1]{\renewcommand{\courseThree}{#1}}
-\newcommand{\profname}[1]{\renewcommand{\profname}{#1}}
-\newcommand{\profnameTwo}[1]{\renewcommand{\profnameTwo}{#1}}
-\newcommand{\profnameThree}[1]{\renewcommand{\profnameThree}{#1}}
+\newcommand{\conference}[1]{\renewcommand{\conference}{#1}}
+\newcommand{\conferenceTwo}[1]{\renewcommand{\conferenceTwo}{#1}}
+\newcommand{\conferenceThree}[1]{\renewcommand{\conferenceThree}{#1}}
+\newcommand{\conferenceFour}[1]{\renewcommand{\conferenceFour}{#1}}
 % \newcommand{\university}[1]{\renewcommand{\university}{#1}}
 % \newcommand{\universityTwo}[1]{\renewcommand{\universityTwo}{#1}}
 % \newcommand{\universityThree}[1]{\renewcommand{\universityThree}{#1}}
@@ -199,19 +200,22 @@
             \ifthenelse{\equal{\classloc}{}}{}{\textsc{\large\iconhalf{\faMapMarker}} & \classloc\\}
             \end{tabular}
         
-        \profilesection{\vspace{0.7cm} Contents}      
+        \profilesection{\vspace{0.7cm} Courses}      
         
         \begin{tabular}{p{0.5cm} @{\hskip 0.5cm}p{5cm}}
-          \ifthenelse{\equal{\course}{}}{}{ & \course\\}
-          \ifthenelse{\equal{\profname}{}}{}{\textsc{\large\icon{\faCommenting}} & \profname \\}
-          \ifthenelse{\equal{\profnameTwo}{}}{}{\textsc{\large\icon{\faUser}} & \profnameTwo \\}
-          % \ifthenelse{\equal{\universityTwo}{}}{}{ & \textit{\universityTwo}\\}
-          \ifthenelse{\equal{\profnameThree}{}}{}{\textsc{\large\icon{\faUser}} & \profnameThree \\}
-          % \ifthenelse{\equal{\universityThree}{}}{}{ & \textit{\universityThree}\\}
+          % \ifthenelse{\equal{\course}{}}{}{ & \course\\}
+          \ifthenelse{\equal{\course}{}}{}{\textsc{\large\icon{\faCommenting}} & \course \\}
+          \ifthenelse{\equal{\courseTwo}{}}{}{\textsc{\large\icon{\faCommenting}} & \courseTwo \\}
+          \ifthenelse{\equal{\courseThree}{}}{}{\textsc{\large\icon{\faCommenting}} & \courseThree \\}
 		\end{tabular}
         
         \profilesection{\vspace{0.7cm} Invited Talks}      
+
         \begin{tabular}{p{0.5cm} @{\hskip 0.5cm}p{5cm}}
+          \ifthenelse{\equal{\conference}{}}{}{\textsc{\large\icon{\faUser}} & \conference \\}
+          \ifthenelse{\equal{\conferenceTwo}{}}{}{\textsc{\large\icon{\faUser}} & \conferenceTwo \\}
+          \ifthenelse{\equal{\conferenceThree}{}}{}{\textsc{\large\icon{\faUser}} & \conferenceThree \\}
+          \ifthenelse{\equal{\conferenceFour}{}}{}{\textsc{\large\icon{\faUser}} & \conferenceFour \\}
 		\end{tabular}
         
         \profilesection{ \vspace{0.5cm}More Info}
