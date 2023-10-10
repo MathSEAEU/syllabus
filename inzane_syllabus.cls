@@ -1,5 +1,5 @@
 \ProvidesClass{inzane_syllabus}[2018/06/28 syllabus class]
-\LoadClass{article}
+\LoadClass[8pt]{article}
 \NeedsTeXFormat{LaTeX2e}
 
 %----------------------------------------------------------------------------------------
@@ -60,8 +60,8 @@
 
 \newlength\imagewidth
 \newlength\imagescale
-\pgfmathsetlength{\imagewidth}{5cm}
-\pgfmathsetlength{\imagescale}{\imagewidth/600}
+\pgfmathsetlength{\imagewidth}{5.5cm}
+\pgfmathsetlength{\imagescale}{\imagewidth/650}
 
 \newlength{\TotalSectionLength} % Define a new length to hold the remaining line width after the section title is printed
 \newlength{\SectionTitleLength} % Define a new length to hold the width of the section title
@@ -82,18 +82,24 @@
 %----------------------------------------------------------------------------------------
 %	 Instructor Info
 %----------------------------------------------------------------------------------------
+\newcommand{\course}[1]{\renewcommand{\course}{#1}}
+\newcommand{\courseTwo}[1]{\renewcommand{\courseTwo}{#1}}
+\newcommand{\courseThree}[1]{\renewcommand{\courseThree}{#1}}
 \newcommand{\profname}[1]{\renewcommand{\profname}{#1}}
-\newcommand{\officehours}[1]{\renewcommand{\officehours}{#1}}
-\newcommand{\office}[1]{\renewcommand{\office}{#1}}
-\newcommand{\site}[1]{\renewcommand{\site}{#1}}
-\newcommand{\email}[1]{\renewcommand{\email}{#1}}
+\newcommand{\profnameTwo}[1]{\renewcommand{\profnameTwo}{#1}}
+\newcommand{\profnameThree}[1]{\renewcommand{\profnameThree}{#1}}
+% \newcommand{\university}[1]{\renewcommand{\university}{#1}}
+% \newcommand{\universityTwo}[1]{\renewcommand{\universityTwo}{#1}}
+% \newcommand{\universityThree}[1]{\renewcommand{\universityThree}{#1}}
+% \newcommand{\email}[1]{\renewcommand{\email}{#1}}
 
 %----------------------------------------------------------------------------------------
 %	 Class Info
 %----------------------------------------------------------------------------------------
 \newcommand{\prereq}[1]{\renewcommand{\prereq}{#1}}
+\newcommand{\prereqTwo}[1]{\renewcommand{\prereqTwo}{#1}}
 \newcommand{\classdays}[1]{\renewcommand{\classdays}{#1}}
-\newcommand{\classhours}[1]{\renewcommand{\classhours}{#1}}
+% \newcommand{\classhours}[1]{\renewcommand{\classhours}{#1}}
 \newcommand{\classloc}[1]{\renewcommand{\classloc}{#1}}
 \newcommand{\classinfo}[1]{\renewcommand{\classinfo}{#1}}
 
@@ -139,6 +145,7 @@
 
 % Command for printing the contact information icons
 \newcommand*\icon[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=1pt, fill=myCOLOR,myCOLOR,text=white] (char) {#1};}}
+\newcommand*\iconSmall[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=0.5pt, fill=myCOLOR,myCOLOR,text=white] (char) {#1};}}
 \newcommand*\icontwo[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=2pt, fill=myCOLOR,myCOLOR,text=white] (char) {#1};}}
 \newcommand*\iconhalf[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=1.5pt, fill=myCOLOR,myCOLOR,text=white] (char) {#1};}}
 
@@ -182,47 +189,49 @@
 
 
 		%------------------------------------------------
-        
-        \profilesection{\vspace{0.7cm} Instructor Info}      
-        
-        \begin{tabular}{p{0.5cm} @{\hskip 0.5cm}p{5cm}}
-        	\ifthenelse{\equal{\profname}{}}{}{\textsc{\large\icon{\faUser}} & \profname \\}
-			\ifthenelse{\equal{\officehours}{}}{}{\textsc{\large\iconhalf{\ClockLogo}} & \officehours\\}
-			\ifthenelse{\equal{\office}{}}{}{\textsc{\large\iconhalf{\faMapMarker}} & \office\\}
-% 			\ifthenelse{\equal{\cvnumberphone}{}}{}{\textsc{\Large\icon{\Telefon}} & \cvnumberphone\\}
-			\ifthenelse{\equal{\site}{}}{}{\textsc{\Large\iconhalf{\faInfo}} & \site\\}
-			\ifthenelse{\equal{\email}{}}{}{\textsc{\large\icon{@}} & \href{mailto:\email}{\email}}
-		\end{tabular}
-        
-        \profilesection{\vspace{0.5cm} Course Info}
+        \profilesection{\vspace{0.5cm} School Info}
         
         \begin{tabular}{p{0.5cm} @{\hskip 0.5cm}p{5cm}}
-        	\ifthenelse{\equal{\prereq}{}}{}{\textsc{\large\iconhalf{\faBolt}} & \prereq\\}
+        	\ifthenelse{\equal{\prereq}{}}{}{\textsc{\large\iconSmall{\faGraduationCap}} & \prereq\\}
+        	\ifthenelse{\equal{\prereqTwo}{}}{}{\textsc{\large\iconSmall{\faGears}} & \prereqTwo\\}
             \ifthenelse{\equal{\classdays}{}}{}{\textsc{\iconhalf{\faCalendarO}} & \classdays\\}
-            \ifthenelse{\equal{\classhours}{}}{}{\textsc{\large\iconhalf{\ClockLogo}} & \classhours\\} 
+            % \ifthenelse{\equal{\classhours}{}}{}{\textsc{\large\iconhalf{\ClockLogo}} & \classhours\\} 
             \ifthenelse{\equal{\classloc}{}}{}{\textsc{\large\iconhalf{\faMapMarker}} & \classloc\\}
             \end{tabular}
         
-        \profilesection{ \vspace{0.5cm}Lab Info}
+        \profilesection{\vspace{0.7cm} Contents}      
         
         \begin{tabular}{p{0.5cm} @{\hskip 0.5cm}p{5cm}}
-            \ifthenelse{\equal{\labdays}{}}{}{\textsc{\iconhalf{\faCalendarO}} & \labdays\\}
-            \ifthenelse{\equal{\labhours}{}}{}{\textsc{\large\iconhalf{\ClockLogo}} & \labhours\\}
-            \ifthenelse{\equal{\labloc}{}}{}{\textsc{\large\iconhalf{\faMapMarker}} & \labloc\\}
-        \end{tabular}
+          \ifthenelse{\equal{\course}{}}{}{ & \course\\}
+          \ifthenelse{\equal{\profname}{}}{}{\textsc{\large\icon{\faCommenting}} & \profname \\}
+          \ifthenelse{\equal{\profnameTwo}{}}{}{\textsc{\large\icon{\faUser}} & \profnameTwo \\}
+          % \ifthenelse{\equal{\universityTwo}{}}{}{ & \textit{\universityTwo}\\}
+          \ifthenelse{\equal{\profnameThree}{}}{}{\textsc{\large\icon{\faUser}} & \profnameThree \\}
+          % \ifthenelse{\equal{\universityThree}{}}{}{ & \textit{\universityThree}\\}
+		\end{tabular}
         
-        \profilesection{\vspace{0.5cm} TA Info}
+        \profilesection{\vspace{0.7cm} Invited Talks}      
+        \begin{tabular}{p{0.5cm} @{\hskip 0.5cm}p{5cm}}
+		\end{tabular}
+        
+        \profilesection{ \vspace{0.5cm}More Info}
         
         \begin{tabular}{p{0.5cm} @{\hskip 0.5cm}p{5cm}}
-            \ifthenelse{\equal{\taAname}{}}{}{\textsc{\large\icon{\faUser}} & \taAname\\}
-            \ifthenelse{\equal{\taAofficehours}{}}{}{\textsc{\large\iconhalf{\ClockLogo}} & \taAofficehours\\}
-            \ifthenelse{\equal{\taAoffice}{}}{}{\textsc{\large\iconhalf{\faMapMarker}} & \taAoffice\\}
-            % \ifthenelse{\equal{\taAemail}{}}{}{\textsc{\large\icon{@}} & \href{mailto:\taAemail}{\taAemail}\\}
-            \ifthenelse{\equal{\taBname}{}}{}{\textsc{\large\icon{\faUser}} & \taBname\\}
-            % \ifthenelse{\equal{\taBofficehours}{}}{}{\textsc{\large\iconhalf{\ClockLogo}} & \taBofficehours\\}
-            \ifthenelse{\equal{\taBoffice}{}}{}{\textsc{\large\iconhalf{\faMapMarker}} & \taBoffice\\}
-            % \ifthenelse{\equal{\taBemail}{}}{}{\textsc{\large\icon{@}} & \href{mailto:\taBemail}{\taBemail}\\}
+            \ifthenelse{\equal{\labloc}{}}{}{\textsc{\large\iconhalf{\faInfo}} & \labloc\\}
         \end{tabular}
+        
+        % \profilesection{\vspace{0.5cm} TA Info}
+        % 
+        % \begin{tabular}{p{0.5cm} @{\hskip 0.5cm}p{5cm}}
+        %     \ifthenelse{\equal{\taAname}{}}{}{\textsc{\large\icon{\faUser}} & \taAname\\}
+        %     \ifthenelse{\equal{\taAofficehours}{}}{}{\textsc{\large\iconhalf{\ClockLogo}} & \taAofficehours\\}
+        %     \ifthenelse{\equal{\taAoffice}{}}{}{\textsc{\large\iconhalf{\faMapMarker}} & \taAoffice\\}
+        %     % \ifthenelse{\equal{\taAemail}{}}{}{\textsc{\large\icon{@}} & \href{mailto:\taAemail}{\taAemail}\\}
+        %     \ifthenelse{\equal{\taBname}{}}{}{\textsc{\large\icon{\faUser}} & \taBname\\}
+        %     % \ifthenelse{\equal{\taBofficehours}{}}{}{\textsc{\large\iconhalf{\ClockLogo}} & \taBofficehours\\}
+        %     \ifthenelse{\equal{\taBoffice}{}}{}{\textsc{\large\iconhalf{\faMapMarker}} & \taBoffice\\}
+        %     % \ifthenelse{\equal{\taBemail}{}}{}{\textsc{\large\icon{@}} & \href{mailto:\taBemail}{\taBemail}\\}
+        % \end{tabular}
         
 %         \ifthenelse{\equal{\about}{}}{}{
 % 			\profilesection{\vspace{0.5cm} About} %just change the title here to change the name of the section. 
