@@ -22,6 +22,7 @@
 \RequirePackage{wasysym}
 \RequirePackage{ifsym}
 
+\RequirePackage{enumitem}
 \RequirePackage{lipsum}
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
@@ -47,11 +48,14 @@
 %	 MISC CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
-\renewcommand{\bfseries}{\color{gray}} % Make \textbf produce coloured text instead
+%\renewcommand{\bfseries}{\color{gray}} % Make \textbf produce coloured text instead
 
 \pagestyle{empty} % Disable headers and footers
 
 \setlength{\parindent}{0pt} % Disable paragraph indentation
+
+\setlist[itemize]{leftmargin=5.0mm} % Set magin of itemize environment
+\setlist[enumerate]{leftmargin=7.0mm} % Set magin of enumerate environment
 
 %----------------------------------------------------------------------------------------
 %	 SIDEBAR DEFINITIONS
@@ -324,8 +328,8 @@
 }
 
 \renewcommand{\subsection}[1]{
-	\par\vspace{.5\parskip}{%
-		\large\color{gray} #1%
+	\par\vspace{2.5\parskip}{%
+    \large\color{myCOLOR} \textbf{#1}%
 	}
 	\par\vspace{.25\parskip}%
 }
