@@ -22,6 +22,8 @@
 \RequirePackage{wasysym}
 \RequirePackage{ifsym}
 
+\RequirePackage{lipsum}
+
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax
 
@@ -182,6 +184,7 @@
 
 		%------------------------------------------------
 
+    \smallskip
 		{\Large\color{myCOLOR}\classnum}
 
 		%------------------------------------------------
@@ -209,7 +212,7 @@
           \ifthenelse{\equal{\courseThree}{}}{}{\textsc{\large\icon{\faCommenting}} & \courseThree \\}
 		\end{tabular}
         
-        \profilesection{\vspace{0.7cm} Invited Talks}      
+        \profilesection{\vspace{0.7cm} Conferences}      
 
         \begin{tabular}{p{0.5cm} @{\hskip 0.5cm}p{5cm}}
           \ifthenelse{\equal{\conference}{}}{}{\textsc{\large\icon{\faUser}} & \conference \\}
