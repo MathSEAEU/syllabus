@@ -23,7 +23,7 @@
 \RequirePackage{ifsym}
 
 \RequirePackage{enumitem}
-\RequirePackage{lipsum}
+\RequirePackage{schedule}
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax
@@ -38,6 +38,16 @@
 \definecolor{mainblue}{HTML}{0E5484}
 \definecolor{maingray}{HTML}{B9B9B9}
 \definecolor{green}{HTML}{66FF66}
+
+% Colors for schedule
+\definecolor{courseOne}{HTML}{5B84FD}
+\definecolor{courseTwo}{HTML}{FBE48D}
+\definecolor{courseThree}{HTML}{8BB4FF}
+\definecolor{conferences}{HTML}{EEA4ED}
+\definecolor{exercises}{HTML}{7BBF9D}
+\definecolor{excursion}{HTML}{8E94DF}
+\definecolor{coffee}{HTML}{4B746D}
+\definecolor{lunch}{HTML}{5B84FD}
 
 %Set the Main Thematic Color here. It is currently blue. 
 \definecolor{myCOLOR}{HTML}{5B84FD}%{046D0B}%05800D}% 06930F}%0E801C}
@@ -319,6 +329,8 @@
 	}%
 	\stepcounter{colorCounter}%
 }
+
+% \newcommand{\sectioncolor}[1]{\color{myCOLOR}#1}
 
 \renewcommand{\section}[1]{
 	{%
