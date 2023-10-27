@@ -225,7 +225,7 @@ Any required journal articles and book chapters will be provided on Canvas.
 \vspace{0.5cm}
 \section{Organizing Committee}
 
-Saša Krešić-Jurić (University of Split), Francisco Ortegón Gallego, Victoria Redondo Neble, J. Rafael Rodríguez Galván (University of Cádiz) Malte Braak (University of Kiel), Hermenegildo Borges de Oliveira (University of Algarve). 
+Saša Krešić-Jurić (University of Split), Francisco Ortegón Gallego, Victoria Redondo Neble, J. Rafael Rodríguez Galván (University of Cádiz) Malte Braack (University of Kiel), Hermenegildo Borges de Oliveira (University of Algarve). 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                COURSES
@@ -328,7 +328,6 @@ Saša Krešić-Jurić (University of Split), Francisco Ortegón Gallego, Victori
 
 \foreach \n in {1,...,12}{Pending task, this section has not yet been filled up. }
 
-%----------------------------------------------------------------------------------------
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                COURSE SCHEDULE
@@ -346,7 +345,7 @@ Saša Krešić-Jurić (University of Split), Francisco Ortegón Gallego, Victori
  \\
  10:00h \emph{Francisco Ortegón Gallego}. Individual work, tutored in forums on the virtual campus  
 \item \textbf{Tuesday 3}, 9:00h. Introduction to Course 2 (video conference). \emph{J. Rafael Rodríguez Galván \& M. Victoria Redondo Neble}. Individual work, tutored in forums on the virtual campus  
-    \item \textbf{Wednesday 4}, 9:00h. Introduction to Course 3 (video conference). \emph{Malte Braak}. Individual work, tutored in forums on the virtual campus  
+    \item \textbf{Wednesday 4}, 9:00h. Introduction to Course 3 (video conference). \emph{Malte Braack}. Individual work, tutored in forums on the virtual campus  
     \item \textbf{Thursday 5} and \textbf{Wednesday 6}. Guided exercises. 
 \end{itemize}
 
@@ -356,10 +355,58 @@ Saša Krešić-Jurić (University of Split), Francisco Ortegón Gallego, Victori
 \section{Schedule for Classroom Sessions}
 \medskip
 
+% %%%%%%% configuration of schedule
+% \CellHeight{14mm}
+% \CellWidth{35mm}
+% \TimeRange{8:30-18:30}
+% \SubUnits{30}
+% \BeginOn{Monday}
+% \TextSize{\scriptsize}
+% \FiveDay
+%
+% \NewAppointment{opening}{green}{black}
+% \NewAppointment{courseOne}{courseOne}{white}
+% \NewAppointment{courseTwo}{courseTwo}{black}
+% \NewAppointment{courseThree}{courseThree}{black}
+% \NewAppointment{coffee}{gray}{white}
+% \NewAppointment{lunch}{maingray}{black}
+% \NewAppointment{talk}{conferences}{black}
+% \NewAppointment{exercises}{exercises}{black}
+% \NewAppointment{excursion}{excursion}{white}
+%
+% %%%%% schedule
+%
+%
+% \begin{schedule}[Split, September 9-13, 2024]
+%   \opening{Opening}{}{M}{8:30-9:00}
+%   \courseOne{Course 1}{Francisco Ortegón Gallego}{M,T,W}{9:00-10:30}
+%   \courseTwo{Course 2}{J. Rafael Rodríguez Galván}{M,T}{11:00-12:30}
+%   \courseThree{Course 3}{Malte Braack}{W,Th,F}{11:00-12:30}
+%   \courseTwo{Course 2}{M. Victoria Redondo Neble}{F}{9:00-10:30}
+%   \courseOne{Course 1}{Francisco Ortegón Gallego}{Th}{9:00-9:45}
+%   \courseTwo{Course 2}{J. Rafael Rodríguez Galván}{Th}{9:45-10:30}
+%   \courseThree{Course 3}{Malte Braack}{F}{11:00-12:30}
+%   
+%   \coffee{Cofee break}{}{M,T,W,Th,F}{10:30-11:00}
+%   \lunch{Lunch}{}{M,T,W,Th,F}{12:30-14:00}
+%   \coffee{Cofee break}{}{M,T,Th}{15:00-15:30}
+%
+%   \talk{Lecture 1}{Hermenegildo Borges de Oliveira}{M}{14:00-15:00}
+%   \talk{Lecture 2}{Pending name}{M}{15:30-16:30}
+%   \talk{Lecture 3}{Pending name}{T}{14:00-15:00}
+%   \talk{Lecture 4}{Pending name}{Th}{14:00-15:00}
+%
+%   \exercises{Exercises I}{}{M}{16:30-18:30}
+%   \exercises{Exercises II}{}{T}{15:30-18:30}
+%   \exercises{Exercises III}{}{Th}{15:30-18:30}
+%   \excursion{Excursion}{}{W}{14:00-18:30}
+%   
+% \end{schedule}
+
 %%%%%%% configuration of schedule
 \CellHeight{14mm}
 \CellWidth{35mm}
-\TimeRange{8:30-18:30}
+\TimeRange{8:30-19:00}
 \SubUnits{30}
 \BeginOn{Monday}
 \TextSize{\scriptsize}
@@ -377,33 +424,56 @@ Saša Krešić-Jurić (University of Split), Francisco Ortegón Gallego, Victori
 
 %%%%% schedule
 
+% \newcommand{\tOpening}{8:30}
+% \newcommand{\tZero}{9:00}
+
+
+\newcommand{\tOpening}{8:30}
+\newcommand{\tOne}{9:00}
+\newcommand{\tTwo}{9:45}
+\newcommand{\tCoffeeOne}{10:30}
+\newcommand{\tThree}{11:00}
+\newcommand{\tLunch}{12:30}
+\newcommand{\tLecturesOne}{14:00}
+\newcommand{\tCoffeeTwo}{15:00}
+\newcommand{\tLecturesTwo}{15:30}
+\newcommand{\tExercises}{16:30}
+\newcommand{\tEnd}{18:30}
 
 \begin{schedule}[Split, September 9-13, 2024]
-  \opening{Opening}{}{M}{8:30-9:00}
-  \courseOne{Course 1}{Francisco Ortegón Gallego}{M,T,W}{9:00-10:30}
-  \courseTwo{Course 2}{J. Rafael Rodríguez Galván}{M,T}{11:00-12:30}
-  \courseThree{Course 3}{Malte Braak}{W,Th,F}{11:00-12:30}
-  \courseTwo{Course 2}{M. Victoria Redondo Neble}{F}{9:00-10:30}
-  \courseOne{Course 1}{Francisco Ortegón Gallego}{Th}{9:00-9:45}
-  \courseTwo{Course 2}{J. Rafael Rodríguez Galván}{Th}{9:45-10:30}
-  \courseThree{Course 3}{Malte Braak}{F}{11:00-12:30}
+  \opening{Opening}{}{M}{\tOpening-\tOne}
+
+  % Courses
+  \courseOne{Course 1}{Francisco Ortegón Gallego}{M,T,W}{\tOne-\tCoffeeOne}
+  \courseOne{Course 1}{Francisco Ortegón Gallego}{Th}{\tOne-\tTwo}
+
+  \courseTwo{Course 2}{J. Rafael Rodríguez Galván}{M,T}{\tThree-\tLunch}
+  \courseTwo{Course 2}{J. Rafael Rodríguez Galván}{Th}{\tTwo-\tCoffeeOne}
+  \courseTwo{Course 2}{M. Victoria Redondo Neble}{F}{\tOne-\tCoffeeOne}
+
+  \courseThree{Course 3}{Malte Braack}{W,Th,F}{\tThree-\tLunch}
   
-  \coffee{Cofee break}{}{M,T,W,Th,F}{10:30-11:00}
-  \lunch{Lunch}{}{M,T,W,Th,F}{12:30-14:00}
-  \coffee{Cofee break}{}{M,T,Th}{15:00-15:30}
+  % Lectures
+  \talk{Lecture 1}{Pending name}{M}{\tLecturesOne-\tCoffeeTwo}
+  \talk{Lecture 2}{Pending name}{M}{\tLecturesTwo-\tExercises}
+  \talk{Lecture 3}{Pending name}{T}{\tLecturesOne-\tCoffeeTwo}
+  \talk{Lecture 4}{Pending name}{T}{\tLecturesTwo-\tExercises}
+  \talk{Lecture 5}{Pending name}{Th}{\tLecturesOne-\tCoffeeTwo}
 
-  \talk{Lecture 1}{Hermenegildo Borges de Oliveira}{M}{14:00-15:00}
-  \talk{Lecture 2}{Pending name}{M}{15:30-16:30}
-  \talk{Lecture 3}{Pending name}{T}{14:00-15:00}
-  \talk{Lecture 4}{Pending name}{Th}{14:00-15:00}
+  % Breaks and excursion
+  \coffee{Cofee break}{}{M,T,W,Th,F}{\tCoffeeOne-\tThree}
+  \coffee{Cofee break}{}{M,T,Th}{\tCoffeeTwo-\tLecturesTwo}
+  \lunch{Lunch}{}{M,T,W,Th,F}{\tLunch-\tLecturesOne}
+  \excursion{Excursion}{}{W}{\tLecturesOne-\tEnd}
 
-  \exercises{Exercises I}{}{M}{16:30-18:30}
-  \exercises{Exercises II}{}{T}{15:30-18:30}
-  \exercises{Exercises III}{}{Th}{15:30-18:30}
-  \excursion{Excursion}{}{W}{14:00-18:30}
+  % % Exercises
+  \exercises{Exercises I}{}{M}{\tExercises-\tEnd}
+  \exercises{Exercises II}{}{T}{\tExercises-\tEnd}
+  \exercises{Exercises III}{}{Th}{\tLecturesTwo-\tEnd}
   
 \end{schedule}
 
+%
 \vspace{0.5cm}
 \section{Schedule for Evaluation}
 
