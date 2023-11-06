@@ -1,0 +1,130 @@
+\documentclass[border={12pt, 8pt, 4pt, 8pt}]{standalone}
+\usepackage[utf8]{inputenc}
+
+\usepackage[sfdefault]{ClearSans}
+\RequirePackage[T1]{fontenc}
+\usepackage{helvet} 
+
+\usepackage{schedule}
+
+%---------------------------------------------------------------
+%	 COLOURS
+%---------------------------------------------------------------
+
+\definecolor{white}{RGB}{255,255,255}
+\definecolor{gray}{HTML}{4D4D4D}
+\definecolor{sidecolor}{HTML}{E7E7E7}
+\definecolor{mainblue}{HTML}{0E5484}
+\definecolor{maingray}{HTML}{B9B9B9}
+\definecolor{green}{HTML}{66FF66}
+
+% Colors for schedule
+\definecolor{courseOne}{HTML}{5B84FD}
+\definecolor{courseTwo}{HTML}{FBE48D}
+\definecolor{courseThree}{HTML}{8BB4FF}
+\definecolor{conferences}{HTML}{EEA4ED}
+\definecolor{exercises}{HTML}{7BBF9D}
+\definecolor{excursion}{HTML}{8E94DF}
+\definecolor{coffee}{HTML}{4B746D}
+\definecolor{lunch}{HTML}{5B84FD}
+
+%--------- Macros for add time stamps ------
+\makeatletter
+\newcommand{\setcurrtime}[1]{%
+  \set@time\curr@hour\curr@mins#1\@nil
+}
+\def\set@time#1#2#3:#4\@nil{%
+  \def#1{#3}\def#2{#4}%
+}
+
+\newcommand{\currtime}[1][00:00]{%
+  \begingroup
+  \set@time\new@hour\new@mins#1\@nil
+  \count\z@=\curr@mins\relax
+  \count\tw@=\curr@hour\relax
+  \advance\count\z@\new@mins\relax
+  \advance\count\tw@\new@hour\relax
+  \ifnum\count\z@>59
+    \advance\count\z@-60
+    \advance\count\tw@\@ne
+  \fi
+  % we have to use \count\z@ and \count\tw@ before
+  % ending the group and printing the result
+  \edef\x{\endgroup\two@digits{\count\tw@}:\two@digits{\count\z@}}\x
+}
+\makeatother
+%--------------------------
+
+\begin{document}
+
+%%%%%%% configuration of schedule
+\CellHeight{14mm}
+\CellWidth{35mm}
+\TimeRange{8:00-19:00}
+\SubUnits{30}
+\BeginOn{Monday}
+\TextSize{\scriptsize}
+\FiveDay
+
+\NewAppointment{opening}{green}{black}
+\NewAppointment{courseOne}{courseOne}{white}
+\NewAppointment{courseTwo}{courseTwo}{black}
+\NewAppointment{courseThree}{courseThree}{black}
+\NewAppointment{coffee}{gray}{white}
+\NewAppointment{lunch}{maingray}{black}
+\NewAppointment{talk}{conferences}{black}
+\NewAppointment{exercises}{exercises}{black}
+\NewAppointment{excursion}{excursion}{white}
+
+%%%%% schedule
+
+% \newcommand{\tOpening}{8:30}
+% \newcommand{\tZero}{9:00}
+
+
+\newcommand{\tOpening}{8:30}
+\newcommand{\tOne}{9:00}
+\newcommand{\tTwo}{10:00}
+\newcommand{\tCoffeeOne}{11:00}
+\newcommand{\tThree}{11:30}
+\newcommand{\tLunch}{13:00}
+\newcommand{\tLectures}{14:30}
+\newcommand{\tCoffeeTwo}{15:30}
+\newcommand{\tExercises}{16:00}
+\newcommand{\tEnd}{18:30}
+
+\begin{schedule}[Split, September 9-13, 2024]
+  \opening{Opening}{}{M}{\tOpening-\tOne}
+
+  % Courses
+  \courseOne{Course 1}{Francisco Ortegón Gallego}{M,Th}{\tTwo-\tThree}
+  \courseOne{Course 1}{Francisco Ortegón Gallego}{T,W}{\tOne-\tThree}
+
+  \courseTwo{Course 2}{J. Rafael Rodríguez Galván}{M,T}{\tThree-\tLunch}
+  \courseTwo{Course 2}{M. Victoria Redondo Neble}{F}{\tThree-\tLunch}
+
+  \courseThree{Course 3}{Malte Braack}{W,Th}{\tThree-\tLunch}
+  \courseThree{Course 3}{Malte Braack}{F}{\tOne-10:30}
+  
+  % Lectures
+  \talk{Lecture 1}{Saša Krešić-Jurić}{M}{\tOne-\tTwo}
+  \talk{Lecture 2}{Hermenegildo Borges de Oliveira}{M}{\tLectures-\tExercises}
+  \talk{Lecture 3}{Karolina Kropielnicka}{T}{\tLectures-\tExercises}
+  \talk{Lecture 4}{M. Conepción Muriel Patino}{Th}{\tOne-\tTwo}
+  \talk{Lecture 5}{Saša's colleague?????}{Th}{\tLectures-\tExercises}
+
+  % Breaks and excursion
+  \coffee{Cofee break}{}{M,T,W,Th,F}{\tCoffeeOne-\tThree}
+  \coffee{Cofee break}{}{M,T,Th}{\tCoffeeTwo-\tExercises}
+  \lunch{Lunch}{}{M,T,W,Th,F}{\tLunch-\tLectures}
+  \excursion{Excursion}{}{W}{\tLectures-\tEnd}
+
+  % Exercises
+  \exercises{Exercises Course 1}{}{M,T}{\tExercises-16:45}
+  \exercises{Exercises Course 2}{}{M,T}{16:45-\tEnd}
+  \exercises{Exercises Course 3}{}{Th}{\tExercises-\tEnd}
+  \exercises{Exercises Course 3}{}{F}{10:30-\tCoffeeOne}
+  
+\end{schedule}
+
+\end{document}
